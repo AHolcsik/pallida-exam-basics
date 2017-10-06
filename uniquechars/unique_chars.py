@@ -8,10 +8,9 @@
 def unique_characters(str):
     unique = []
     for letter in str:
-        if letter in unique:
-            unique.remove(letter)
-        if letter not in unique:
-            unique += letter
+        unique += letter
+        for element in unique:
+            if element 
     return unique
 
 print(unique_characters("anagram"))
