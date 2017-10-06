@@ -32,8 +32,9 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-[add your answer here]
+The main difference between a function and a method is that the latter is associated with a class while the former is independent. Both of them needs to be called.
+
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+Constructors are used in classes to prepare a new object (the instances of a class) for use, usually accepting arguments to set the variables for the object. In Python __init__ or __new__ is used.
