@@ -48,13 +48,22 @@
 
 class CandyShop():
 
-    def __init__(self):
+    def __init__(self, sugar = 300, money = 100):
         self.sugar = sugar
         self.money = money
-        self.storage = []
+        self.storage = [    
+                        {'lollipops':0},
+                        {'candies':0}    
+                        ]
 
-    def create_sweets(self):
-        pass
+    def create_sweets(self, type):
+        if type == 'lollipop':
+            self.sugar -= 5
+            self.storage['lollipop'] += 1
+        if type == 'candie':
+            self.sugar -= 5
+            self.storage['candies'] += 1
+
 
     def sell(self):
         pass
@@ -68,6 +77,8 @@ class CandyShop():
     def inventory(self):
         pass
 
-
+candyshop = CandyShop()
+candyshop.create_sweets('lollipop')
+print(candyshop.storage)
 
 
