@@ -2,3 +2,9 @@ dog
 cat
 zebra
 zebra
+lion
+lion
+tiger
+bambi
+rhino
+gazelle

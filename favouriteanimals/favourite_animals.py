@@ -14,7 +14,7 @@ file_name = 'favourites.txt'
 def app_controller():
     if len(sys.argv) == 1:
         print_animals()
-    elif len(sys.argv) == 2:
+    elif len(sys.argv) >= 2:
         add_animal()
     else:
         print('Unsuported argument')
@@ -31,7 +31,8 @@ def print_animals():
 def add_animal():
     try:
         f = open(file_name, 'a')
-        f.write(sys.argv[1] + '\n')
+        for element in sys.argv[1:]:
+            f.write(element + '\n')
     except IOError:
         print('Unable to read file: ', file_name)  
 
