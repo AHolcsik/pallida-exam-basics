@@ -72,13 +72,14 @@ class CandyShop():
         pass
 
     def buy_sugar(self):
-        pass
+        self.sugar += 1000
+        self.money -= 100
 
     def inventory(self):
         pass
 
 candyshop = CandyShop()
-candyshop.create_sweets('lollipop')
-print(candyshop.storage)
+candyshop.buy_sugar()
+print(candyshop.sugar)
 
 
