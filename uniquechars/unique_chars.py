@@ -5,14 +5,13 @@
 # Should print out:
 # ["n", "g", "r", "m"]
 
-def unique_characters(str):
-    unique = []
-    for letter in str:
-        unique += letter
-        for element in unique:
-            if element 
-    return unique
-
-print(unique_characters("anagram"))
-
+def unique_characters(word):
+    if len(word) <=1:
+        return [word]
+    else:
+        all_letters = []
+        for letter in word:
+            all_letters += letter
+            unique = [element for element in all_letters if all_letters.count(element) == 1]
+        return unique
 
