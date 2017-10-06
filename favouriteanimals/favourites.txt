@@ -1,5 +1,3 @@
 dog
 cat
-shark
-bambi
-cat
+
