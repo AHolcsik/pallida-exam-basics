@@ -1,10 +1,5 @@
 dog
 cat
-zebra
-zebra
-lion
-lion
-tiger
+shark
 bambi
-rhino
-gazelle
+cat

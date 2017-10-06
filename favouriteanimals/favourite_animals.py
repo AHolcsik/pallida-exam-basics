@@ -29,13 +29,30 @@ def print_animals():
         print('Unable to read file: ', file_name)
 
 def add_animal():
-    try:
-        f = open(file_name, 'a')
-        for element in sys.argv[1:]:
-            f.write(element + '\n')
-    except IOError:
-        print('Unable to read file: ', file_name)  
-
+    new_animals = sys.argv[1:]
+    f = open(file_name, 'a+')
+    for animal in new_animals:
+        if animal not in f.readlines():
+            try:
+                f.write(animal + '\n')
+            except IOError:
+                print('Unable to read file: ', file_name)
+    
 
 
 app_controller()
+
+
+
+
+# def add_animal():
+#     try:
+#         f = open(file_name, 'r')
+#         for animal in f.readlines:
+#             if animal != 
+#         try:
+#             f = open(file_name, 'a')
+#             for element in sys.argv[1:]:
+#                 f.write(element + '\n')
+#     except IOError:
+#         print('Unable to read file: ', file_name)  
