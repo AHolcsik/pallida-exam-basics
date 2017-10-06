@@ -11,19 +11,15 @@
 import sys
 file_name = 'favourites.txt'
 
-def app_arg():
-    return len(sys.argv)
-
 def app_controller():
-    if app_arg() == 1:
-        print_favs()
-    elif app_arg() == 2:
+    if len(sys.argv) == 1:
+        print_animals()
+    elif len(sys.argv) == 2:
         add_animal()
     else:
         print('Unsuported argument')
 
-
-def print_favs():
+def print_animals():
     try:
         f = open(file_name, 'r')
         for animal in f.readlines():
