@@ -46,23 +46,38 @@
 # Should print out:
 # "Invetory: 1 candies, 1 lollipops, Income:5, Sugar: 315gr"
 
+
+class Candy():
+
+    def __init__(self, sugar, price, type):
+        self.sugar = sugar
+        self.price = price
+    
+class Lollipop(Candy):
+
+    def __init__(self):
+        super(Lollipop, self).__init__(5, 10, 'lollipop')
+
+class Candie(Candy):
+    
+    def __init__(self):
+        super(Lollipop, self).__init__(10, 20, 'candie')
+
+
 class CandyShop():
 
     def __init__(self, sugar = 300, money = 100):
         self.sugar = sugar
         self.money = money
-        self.storage = [    
-                        {'lollipops':0},
-                        {'candies':0}    
-                        ]
+        self.storage = []
 
     def create_sweets(self, type):
         if type == 'lollipop':
             self.sugar -= 5
-            self.storage['lollipop'] += 1
+            self.storage.append(Candy(type,0,0))
         if type == 'candie':
             self.sugar -= 10
-            self.storage['candies'] += 1
+            self.storage.append(Candy(type,0,0))
 
 
     def sell(self):
@@ -76,26 +91,11 @@ class CandyShop():
         self.money -= 100
 
     def inventory(self):
-        pass
+        return 'Inventory: ' + '...' + ', Income: ' + str(self.money) + ', Sugar: ' + str(self.sugar)
+        
 
-candyshop = CandyShop()
-candyshop.buy_sugar()
-print(candyshop.sugar)
+candy_shop = CandyShop()
+candy_shop.create_sweets('lollipop')
+print(candy_shop.inventory())
 
-class Candy():
-
-    def __init__(self, sugar, price):
-        self.sugar = sugar
-        self.price = price
-    
-
-class Lollipop(Candy):
-
-    def __init__(self):
-        super(Lollipop, self).__init__(5, 10)
-
-class Candie(Candy):
-    
-    def __init__(self):
-        super(Lollipop, self).__init__(10, 20)
 
