@@ -61,7 +61,7 @@ class CandyShop():
             self.sugar -= 5
             self.storage['lollipop'] += 1
         if type == 'candie':
-            self.sugar -= 5
+            self.sugar -= 10
             self.storage['candies'] += 1
 
 
@@ -82,4 +82,20 @@ candyshop = CandyShop()
 candyshop.buy_sugar()
 print(candyshop.sugar)
 
+class Candy():
+
+    def __init__(self, sugar, price):
+        self.sugar = sugar
+        self.price = price
+    
+
+class Lollipop(Candy):
+
+    def __init__(self):
+        super(Lollipop, self).__init__(5, 10)
+
+class Candie(Candy):
+    
+    def __init__(self):
+        super(Lollipop, self).__init__(10, 20)
 
